@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+
+    --primaryColor: #1d2531;
+    --secondaryColor: #0f203a;
+    --hoverColor: #4d6dd6;
+    --textColor: #ddd;
+}
+
+body{
+    background-color: var(--primaryColor);
+    color: var(--textColor);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.navbarButton{
+    border: none;
+    background-color: #1d2531b7;
+    font-size: 2.5rem;
+    color: var(--textColor);
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+}
+
+.navbarButton:active{
+    color: var(--hoverColor);
+}
+
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 170px;
+    height: 100%;
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    padding: 60px 0 20px 0;
+    transition: .5s;
+    z-index: 1;
+}
+
+/* js ile ilgili kısım */
+
+nav.hide-navbar{
+    left: -200px;
+}
+
+/* js ile ilgili kısım */
+
+nav .profileImage{
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    border: var(--hoverColor) 3px solid;
+}
+
+.profileImage img{
+    width: 100%;
+}
+
+nav figcaption{
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.nav-link{
+    margin-bottom: .3rem;
+}
+
+.nav-link a{
+    display: block;
+    color: var(--textColor);
+    text-align: left;
+    width: 100%;
+    padding: 10px 0 10px 20px;
+}
+
+.nav-link a:hover, .active a{
+    background-color: var(--textColor);
+    color: #111;
+}
+
+.nav-link span{
+    margin-left: 10px;
+}
+
+.nav-link i{
+    font-size: 1.2rem;
+}
+
+main{
+    position: relative;
+    height: 100vh;
+}
+
+main h1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+}
+
+@media only screen and (max-width: 760px){
+
+    nav{
+        width: 60px;
+        align-items: center;
+    }
+
+    nav figure{
+        display: none;
+    }
+
+    .nav-link{
+        margin-bottom: 1rem;
+    }
+
+    .nav-link a{
+        padding: 5px 10px;
+        border-radius: 3px;
+        text-align: center;
+    }
+
+    .nav-link span{
+        display: none;
+    }
+
+    .nav-link i{
+        font-size: 1.5rem;
+    }
+}
+
